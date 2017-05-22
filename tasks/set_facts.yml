@@ -5,7 +5,7 @@
     squid_root_dir: "/etc/squid"
     squid_service: "squid"
   when: >
-        ansible_distribution == "CentOS"
+        ansible_os_family == "RedHat" and ansible_distribution != 'Fedora'
 
 - name: set_facts | Setting Debian Facts
   set_fact:
